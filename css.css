@@ -11,9 +11,10 @@ body {
 #hus{width: 120px;
 height: 120px;
 background-color: red;
-top: 850px;
-left: 1100px;
-z-index: -1;}
+top: 400px;
+left: 800px;
+z-index: -1;
+position: fixed;}
 
 
 #ikon {
