@@ -1,0 +1,30 @@
+body {
+    height: 100%;
+    overflow: hidden;
+}
+
+#img {
+
+    height: 150px;
+}
+
+#ikon {
+    position: relative;
+    overflow: hidden;
+    animation: ikon 40s infinite;
+    top: 500px;
+    animation-timing-function: linear;
+}
+
+
+
+
+@keyframes ikon {
+    from {
+        left: -220px;
+    }
+
+    to {
+        left: 1350px;
+    }
+}
