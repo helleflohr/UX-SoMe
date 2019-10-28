@@ -1,69 +1,77 @@
 body {
     height: 100%;
     overflow: hidden;
+    background-image: url(img/Background.jpg);
+    background-size: 100%;
+background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-position: bottom;
 }
 
-#img {
 
-    height: 150px;
+.house {
+    bottom: 20%;
+    z-index: -2;
+    position: absolute;
 }
 
 #houseOne {
-    top: 400px;
-    left: 250px;
-    z-index: -2;
-    position: fixed;
-    
+    left: 18%;
 }
 
 #houseTwo {
-    top: 400px;
-    left: 375px;
-    z-index: -2;
-    position: fixed;
+    left: 30%;
 }
+#houseTwo img{width: 50%;}
 
 #houseThree {
-    top: 400px;
-    left: 800px;
-    z-index: -2;
-    position: fixed;
+    left: 42%;
+}
+
+#houseFour {
+    left: 54%;
 }
 
 
-.skilt{display: none;}
-#skiltOne {
+.skilt {
+    position: absolute;
     top: 480px;
-    left: 300px;
-    position: fixed;
     z-index: -1;
     display: none;
+}
+
+.skilt img {
+    width: 150px;
+    height: auto;
+}
+
+#skiltOne {
+    left: 18%;
 }
 
 #skiltTwo {
-    top: 480px;
-    left: 650px;
-    position: fixed;
-    z-index: -1;
-    display: none;
+    left: 28%;
 }
 
 #skiltThree {
-    top: 480px;
-    left: 950px;
-    position: fixed;
-    z-index: -1;
-    display: none;
+    left: 53%;
+}
+
+#skiltFour {
+    left: 54%;
 }
 
 
 
-#ikon {
-    position: relative;
+#bus {
+    position: absolute;
+    
     overflow: hidden;
-    animation: ikon 40s linear infinite;
-    top: 500px;
+  
+    animation: ikon 35s linear infinite;
+    bottom: 0.5%;
 }
+#bus img {height: 150px;}
 
 
 
