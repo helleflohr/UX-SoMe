@@ -10,7 +10,7 @@ function bussen() {
     var d = houseTwo.left - bus.left;
     var m = houseThree.left - bus.left;
     var h = houseFour.left - bus.left;
-    document.getElementById("p").innerHTML = bus.left;
+    
 
     if (a < 250 && a > 0) {
        
