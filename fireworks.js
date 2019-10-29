@@ -49,7 +49,8 @@ function launchFrom(x) {
         rocket.explosionColor = Math.floor(Math.random() * 360 / 10) * 10;
         rocket.vel.y = Math.random() * -3 - 4;
         rocket.vel.x = Math.random() * 6 - 3;
-        rocket.size = 8;
+        // Launch - størrelse
+        rocket.size = 10;
         rocket.shrink = 0.999;
         rocket.gravity = 0.01;
         rockets.push(rocket);
@@ -176,6 +177,7 @@ Particle.prototype.render = function(c) {
         r = this.size / 2;
 
     var gradient = c.createRadialGradient(x, y, 0.1, x, y, r);
+    // Farve i midten af springningen
     gradient.addColorStop(0.1, "rgba(255,255,255," + this.alpha + ")");
     gradient.addColorStop(0.8, "hsla(" + this.color + ", 100%, 50%, " + this.alpha + ")");
     gradient.addColorStop(1, "hsla(" + this.color + ", 100%, 50%, 0.1)");
@@ -218,7 +220,8 @@ Rocket.prototype.explode = function() {
         particle.vel.x = Math.cos(angle) * speed;
         particle.vel.y = Math.sin(angle) * speed;
 
-        particle.size = 10;
+        //Raket størrelse
+        particle.size = 30;
 
         particle.gravity = 0.2;
         particle.resistance = 0.92;
@@ -245,8 +248,10 @@ Rocket.prototype.render = function(c) {
         r = this.size / 2;
 
     var gradient = c.createRadialGradient(x, y, 0.1, x, y, r);
+    // FARVE - Launch center
     gradient.addColorStop(0.1, "rgba(255, 255, 255 ," + this.alpha + ")");
-    gradient.addColorStop(1, "rgba(0, 0, 0, " + this.alpha + ")");
+    // FARVE - Launch border
+    gradient.addColorStop(1, "rgba(100, 200, 255, " + this.alpha + ")");
 
     c.fillStyle = gradient;
 
