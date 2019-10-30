@@ -128,6 +128,26 @@ $(document).ready(function() {
 
 });
 
+    // Kolding
+let kolding = "http://api.openweathermap.org/data/2.5/weather?q=Kolding&appid=c13e783c88ac044c49b07ec9df251604&units=metric";
+
+$(document).ready(function() {
+    // get the weather data
+     fetch(kolding).then(response => {
+            return response.json();
+        }).then(data => {
+            // Work with JSON data here
+            console.log(data); // show what's in the json
+            $('#weatherKolding').append('<div class="weatherInfoKolding">' +
+                data.name + ' ' + 
+                data.main.temp + '&#0176' + '</div>');
+        }).catch(err => {
+            // Do something for an error here
+            console.log('There was an error ...');
+        });
+    
+    });
+
 
 
 
