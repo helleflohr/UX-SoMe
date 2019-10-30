@@ -1,3 +1,8 @@
+@font-face {
+    font-family: 'Avenir';
+    src: url(Avenir\ Roman.otf);
+  }
+
 body {
     height: 100%;
     overflow: hidden;
@@ -10,7 +15,7 @@ background-attachment: fixed;
 
 
 .house {
-    bottom: 20%;
+    bottom: 150px;
     z-index: -2;
     position: absolute;
 }
@@ -20,16 +25,17 @@ background-attachment: fixed;
 }
 
 #houseTwo {
-    left: 30%;
+    left: 35%;
 }
 #houseTwo img{width: 50%;}
 
 #houseThree {
-    left: 42%;
+    left: 54%;
+    bottom:240px;
 }
 
 #houseFour {
-    left: 54%;
+    left:75%;
 }
 
 
@@ -38,11 +44,13 @@ background-attachment: fixed;
     top: 480px;
     z-index: -1;
     display: none;
+    text-align: center;
 }
 
 .skilt img {
     width: 150px;
     height: auto;
+    display: inline-block;
 }
 
 #skiltOne {
@@ -50,15 +58,15 @@ background-attachment: fixed;
 }
 
 #skiltTwo {
-    left: 28%;
+    left: 35%;
 }
 
 #skiltThree {
-    left: 53%;
+    left: 58%;
 }
 
 #skiltFour {
-    left: 54%;
+    left: 75%;
 }
 
 
@@ -85,3 +93,16 @@ background-attachment: fixed;
         left: 1350px;
     }
 }
+
+
+
+#weatherAarhus, #weatherAalborg, #weatherEsbjerg{
+    position: absolute;
+    top: 10%;
+    left:20%;
+    font-family:'Avenir', sans-serif; 
+}
+
+ .weatherInfo {
+    position: absolute;
+} 
