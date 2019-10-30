@@ -1,5 +1,3 @@
-
-
 function bussen() {
     var bus = $("#bus").position();
     var houseOne = $("#houseOne").position();
@@ -10,17 +8,17 @@ function bussen() {
     var d = houseTwo.left - bus.left;
     var m = houseThree.left - bus.left;
     var h = houseFour.left - bus.left;
-    
+
 
     if (a < 250 && a > 0) {
-       
-       $("#skiltOne").fadeIn();
+
+        $("#skiltOne").fadeIn();
     } else {
         $("#skiltOne").fadeOut();
     }
 
     if (d < 250 && d > 0) {
-       
+
         $("#skiltTwo").fadeIn();
     } else {
         $("#skiltTwo").fadeOut();
@@ -33,7 +31,7 @@ function bussen() {
     }
 
     if (h < 250 && h > 0) {
-       
+
         $("#skiltFour").fadeIn();
     } else {
         $("#skiltFour").fadeOut();
@@ -59,6 +57,105 @@ $(document).ready(function () {
 })
 
 
+
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// OPEN WEATHER MAP
+
+// //Aalborg
+let aalborg = "http://api.openweathermap.org/data/2.5/weather?q=Aalborg&appid=0ac38cf4ae27908e469d1ca04a9dec3a&units=metric";
+
+        $(document).ready(function() {
+
+            // get the weather data
+            fetch(aalborg).then(response => {
+                return response.json();
+            }).then(data => {
+                // Work with JSON data here
+                console.log(data); // show what's in the json
+                $('#weatherAalborg').append('<div class="weatherInfoAalborg">' +
+                    data.name + ' ' +
+                    data.main.temp + '&#0176' +
+                    '</div>');
+
+            }).catch(err => {
+                // Do something for an error here
+                console.log('There was an error ...');
+            });
+
+        }); // document ready end
+
+
+    //Aarhus
+let aarhus = "http://api.openweathermap.org/data/2.5/weather?q=Aarhus&appid=0ac38cf4ae27908e469d1ca04a9dec3a&units=metric";
+
+$(document).ready(function() {
+    // get the weather data
+    fetch(aarhus).then(response => {
+        return response.json();
+    }).then(data => {
+        // Work with JSON data here
+        console.log(data); // show what's in the json
+        $('#weatherAarhus').append('<div class="weatherInfoAarhus">' +
+            data.name + ' ' + 
+            data.main.temp + '&#0176' +
+            '</div>');
+    }).catch(err => {
+        // Do something for an error here
+        console.log('There was an error ...');
+    });
+
+});
+
+//Esbjerg
+let esbjerg = "http://api.openweathermap.org/data/2.5/weather?q=Esbjerg&appid=0ac38cf4ae27908e469d1ca04a9dec3a&units=metric";
+
+$(document).ready(function() {
+    // get the weather data
+    fetch(esbjerg).then(response => {
+        return response.json();
+    }).then(data => {
+        // Work with JSON data here
+        console.log(data); // show what's in the json
+        $('#weatherEsbjerg').append('<div class="weatherInfoEsbjerg">' +
+            data.name + ' ' + 
+            data.main.temp + '&#0176' +
+            '</div>');
+    }).catch(err => {
+        // Do something for an error here
+        console.log('There was an error ...');
+    });
+
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 // // Funktionen er sat til at tælle fra siden bliver loaded. Med FadeInAndOutOne fader "skiltOne"  ind når der
 // //  er gået 6 sekunder, og forsvinder når der er gået 12 sekunder. FadeInAndOutTwo gør at "skiltTwo" fader ind når 
 // // der er gået 15 sec, og ud når der er gået 21. FadeInAndOutThree får "skiltThree" til at fade ind når der er gået
@@ -71,7 +168,7 @@ $(document).ready(function () {
 //     setTimeout(function () {
 //         $('#skiltOne').fadeIn();
 //     }, 6000);
-    
+
 //     setTimeout(function(){
 //         $('#skiltOne').fadeOut();
 //     }, 12000)
@@ -83,7 +180,7 @@ $(document).ready(function () {
 //     setTimeout(function () {
 //         $('#skiltTwo').fadeIn();
 //     }, 15000);
-    
+
 //     setTimeout(function(){
 //         $('#skiltTwo').fadeOut();
 //     }, 21000)
@@ -95,7 +192,7 @@ $(document).ready(function () {
 //     setTimeout(function () {
 //         $('#skiltThree').fadeIn();
 //     }, 23000);
-    
+
 //     setTimeout(function(){
 //         $('#skiltThree').fadeOut();
 //     }, 29000)
@@ -122,49 +219,3 @@ $(document).ready(function () {
 //         FadeInAndOutThree();
 //     }, 40000);
 // })
-
-
-
-// /* $(document).ready(function () {
-//     timeoutHandleOne = setTimeout(function () {
-//         $('#skiltOne').fadeIn();
-//     }, 6000);
-// });
-
-// $(document).ready(function () {
-//     setTimeout(function(){
-//         $('#skiltOne').fadeOut();
-//     }, 12000)
-// });
-
-// $(document).ready(function () {
-//     timeoutHandleTwo = setTimeout(function () {
-//         $('#skiltTwo').fadeIn();
-//     }, 15000);
-//     setTimeout(function(){
-//         $('#skiltTwo').fadeOut();
-//     }, 21000)
-// });
-
-// $(document).ready(function () {
-//     timeoutHandleThree = setTimeout(function () {
-//         $('#skiltThree').fadeIn();
-//     }, 23000);
-//     setTimeout(function(){
-//         $('#skiltThree').fadeOut();
-//     }, 29000)
-// });
-
-
-// clearTimeout(timeoutHandleOne);
-// clearTimeout(timeoutHandleTwo);
-// clearTimeout(timeoutHandleThree); */
-
-
-// /* $(document).ready(function(){
-//     FadeInAndOutTwo();
-// })
-
-// $(document).ready(function(){
-//     FadeInAndOutThree();
-// }) */
