@@ -62,7 +62,29 @@ $(document).ready(function () {
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // OPEN WEATHER MAP
 
-// //Aalborg
+    // Aarhus
+    let aarhus = "http://api.openweathermap.org/data/2.5/weather?q=Aarhus&appid=0ac38cf4ae27908e469d1ca04a9dec3a&units=metric";
+
+    $(document).ready(function() {
+        // get the weather data
+        fetch(aarhus).then(response => {
+            return response.json();
+        }).then(data => {
+            // Work with JSON data here
+            console.log(data); // show what's in the json
+            $('#weatherAarhus').append('<div class="weatherInfoAarhus">' +
+                data.name + ' ' + 
+                parseInt(data.main.temp) + '&#0176' +
+                '</div>');
+        }).catch(err => {
+            // Do something for an error here
+            console.log('There was an error ...');
+        });
+    
+    });
+
+
+ // Aalborg
 let aalborg = "http://api.openweathermap.org/data/2.5/weather?q=Aalborg&appid=0ac38cf4ae27908e469d1ca04a9dec3a&units=metric";
 
         $(document).ready(function() {
@@ -75,7 +97,7 @@ let aalborg = "http://api.openweathermap.org/data/2.5/weather?q=Aalborg&appid=0a
                 console.log(data); // show what's in the json
                 $('#weatherAalborg').append('<div class="weatherInfoAalborg">' +
                     data.name + ' ' +
-                    data.main.temp + '&#0176' +
+                    parseInt(data.main.temp) + '&#0176' +
                     '</div>');
 
             }).catch(err => {
@@ -85,27 +107,6 @@ let aalborg = "http://api.openweathermap.org/data/2.5/weather?q=Aalborg&appid=0a
 
         }); // document ready end
 
-
-    //Aarhus
-let aarhus = "http://api.openweathermap.org/data/2.5/weather?q=Aarhus&appid=0ac38cf4ae27908e469d1ca04a9dec3a&units=metric";
-
-$(document).ready(function() {
-    // get the weather data
-    fetch(aarhus).then(response => {
-        return response.json();
-    }).then(data => {
-        // Work with JSON data here
-        console.log(data); // show what's in the json
-        $('#weatherAarhus').append('<div class="weatherInfoAarhus">' +
-            data.name + ' ' + 
-            data.main.temp + '&#0176' +
-            '</div>');
-    }).catch(err => {
-        // Do something for an error here
-        console.log('There was an error ...');
-    });
-
-});
 
 //Esbjerg
 let esbjerg = "http://api.openweathermap.org/data/2.5/weather?q=Esbjerg&appid=0ac38cf4ae27908e469d1ca04a9dec3a&units=metric";
@@ -119,7 +120,7 @@ $(document).ready(function() {
         console.log(data); // show what's in the json
         $('#weatherEsbjerg').append('<div class="weatherInfoEsbjerg">' +
             data.name + ' ' + 
-            data.main.temp + '&#0176' +
+            parseInt(data.main.temp) + '&#0176' +
             '</div>');
     }).catch(err => {
         // Do something for an error here
@@ -140,7 +141,7 @@ $(document).ready(function() {
             console.log(data); // show what's in the json
             $('#weatherKolding').append('<div class="weatherInfoKolding">' +
                 data.name + ' ' + 
-                data.main.temp + '&#0176' + '</div>');
+                parseInt(data.main.temp) + '&#0176' + '</div>');
         }).catch(err => {
             // Do something for an error here
             console.log('There was an error ...');

@@ -23,22 +23,31 @@ $(document).ready(function() {
     setInterval(loop, 1000 / 50);
 });
 
- // update mouse position
-$(document).mousemove(function(e) {
-    e.preventDefault();
-    mousePos = {
-        x: e.clientX,
-        y: e.clientY
-    };
-}); 
 
-// launch more rockets!!!
 $(document).keydown(function(e) {
-    for (var i = 0; i < 1; i++) {
-        launchFrom(Math.random() * SCREEN_WIDTH * 2 / 3 + SCREEN_WIDTH / 6);
+    switch(e.which) {
+        case 37: // left
+        launchFrom(SCREEN_WIDTH * 0.2);
+        break;
+
+        case 38: // up
+        launchFrom(SCREEN_WIDTH * 0.4);
+        break;
+
+        case 39: // right
+        launchFrom(SCREEN_WIDTH * 0.6);
+        break;
+
+        case 40: // down
+        launchFrom(SCREEN_WIDTH * 0.8);
+        break;
+
+        default: return; // exit this handler for other keys
     }
+    e.preventDefault(); // prevent the default action (scroll / move caret)
 });
 
+//Denne funktion gør at raketterne bliver skudt af, denne må ikke fjernes
 function launch() {
     launchFrom(mousePos.x);
 }
@@ -68,10 +77,7 @@ function loop() {
 
     // clear canvas
    
-   // context.fillStyle ="transparent";
-    //context.fillStyle = "rgba(255, 255, 255, 0)";
-   // context.fillRect(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT);
-    //context.globalAlpha = 0.2;
+
     context.clearRect(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT);
 
     var existingRockets = [];
