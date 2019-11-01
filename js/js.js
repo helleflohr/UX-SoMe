@@ -10,27 +10,27 @@ function bussen() {
     var h = houseFour.left - bus.left;
 
 
-    if (a < 250 && a > 0) {
+    if (a < 300 && a > 0) {
 
         $("#skiltOne").fadeIn();
     } else {
         $("#skiltOne").fadeOut();
     }
 
-    if (d < 250 && d > 0) {
+    if (d < 300 && d > 0) {
 
         $("#skiltTwo").fadeIn();
     } else {
         $("#skiltTwo").fadeOut();
     }
 
-    if (m < 250 && m > 0) {
+    if (m < 300 && m > 0) {
         $("#skiltThree").fadeIn();
     } else {
         $("#skiltThree").fadeOut();
     }
 
-    if (h < 250 && h > 0) {
+    if (h < 300 && h > 0) {
 
         $("#skiltFour").fadeIn();
     } else {

@@ -257,7 +257,7 @@ Rocket.prototype.render = function(c) {
     // FARVE - Launch center
     gradient.addColorStop(0.1, "rgba(255, 255, 255 ," + this.alpha + ")");
     // FARVE - Launch border
-    gradient.addColorStop(1, "rgba(100, 200, 255, " + this.alpha + ")");
+    gradient.addColorStop(1, "rgba(255, 100, 100, " + this.alpha + ")");
 
     c.fillStyle = gradient;
 

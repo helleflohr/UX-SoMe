@@ -31,7 +31,7 @@ background-attachment: fixed;
 
 #houseThree {
     left: 54%;
-    bottom:240px;
+    bottom:275px;
 }
 
 #houseFour {
@@ -42,7 +42,7 @@ background-attachment: fixed;
 
 .skilt {
     position: absolute;
-    top: 480px;
+    bottom: 100px;
     z-index: -1;
     display: none;
     text-align: center;
@@ -100,8 +100,9 @@ background-attachment: fixed;
 #weatherKolding {
     position: absolute;
     top: 10%;
-    left:20%;
+    left:27%;
     font-family:'Avenir', sans-serif; 
+  
 }
 
  .weatherInfo {
