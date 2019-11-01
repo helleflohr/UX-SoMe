@@ -24,7 +24,7 @@ $(document).ready(function() {
 });
 
 
-$(document).keydown(function(e) {
+$(document).keyup(function(e) {
     switch(e.which) {
         case 37: // left
         launchFrom(SCREEN_WIDTH * 0.2);
